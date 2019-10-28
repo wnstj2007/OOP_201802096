@@ -16,6 +16,7 @@ private:
 public:
     shared_mut();
     explicit shared_mut(Object* obj);
+shared_mut(const shared_mut& shared);
     ~shared_mut();
 
     Object* get() const;

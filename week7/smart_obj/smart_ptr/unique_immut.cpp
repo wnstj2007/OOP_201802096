@@ -15,7 +15,7 @@ unique_immut::unique_immut(Object *obj) {
 
 void unique_immut::release() {
 	if(_mgr != nullptr) {
-		delete(_mgr);
+		delete _mgr;
 		_mgr = nullptr;
 	}
 }
@@ -38,8 +38,8 @@ unique_immut unique_immut::operator+(unique_immut &unique) {
 	int val1 = _mgr->ptr->get();
 	int val2 = unique.get()->get();
 	int sum = val1+val2;
-	this->~unique_immut();
-	unique.~unique_immut();
+	this->release();
+	unique.release();
 	unique_immut n(new Object(sum));
 	return n;
 }
@@ -47,8 +47,8 @@ unique_immut unique_immut::operator-(unique_immut &unique) {
 	int val1 = _mgr->ptr->get();
         int val2 = unique.get()->get();
         int sub = val1-val2;
-        this->~unique_immut();
-        unique.~unique_immut();
+        this->release();
+        unique.release();
         unique_immut n(new Object(sub));
         return n;
 	
@@ -57,8 +57,8 @@ unique_immut unique_immut::operator*(unique_immut &unique) {
 	int val1 = _mgr->ptr->get();
         int val2 = unique.get()->get();
         int mul = val1*val2;
-        this->~unique_immut();
-        unique.~unique_immut();
+        this->release();
+        unique.release();
         unique_immut n(new Object(mul));
         return n;
 }
@@ -66,8 +66,8 @@ unique_immut unique_immut::operator/(unique_immut &unique) {
 	int val1 = _mgr->ptr->get();
         int val2 = unique.get()->get();
         int div = val1/val2;
-        this->~unique_immut();
-        unique.~unique_immut();
+        this->release();
+        unique.release();
         unique_immut n(new Object(div));
         return n;
 }
