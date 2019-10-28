@@ -29,40 +29,49 @@ void shared_mut::release() {
 }
 
 int shared_mut::count() {
-//	return _mgr->count;
+	return _mgr->count;
 }
 	
 shared_mut shared_mut::operator+(const shared_mut &shared) {
-/*	shared_mut t = *this;
-	t.ptr += shared.ptr;
-	return t;
-*/}
+	int val1 = _mgr->ptr->get();
+	int val2 = shared.get()->get();
+	int val3 = val1+val2;
+	shared_mut n(new Object(val3));
+	return n;
+}
 	
 shared_mut shared_mut::operator-(const shared_mut &shared) {
-/*	shared_mut t = *this;
-	t.ptr -= shared.ptr;
-	return t;
-*/}
+	int val1 = _mgr->ptr->get();
+        int val2 = shared.get()->get();
+        int val3 = val1-val2;
+        shared_mut n(new Object(val3));
+        return n;
+}
 
 shared_mut shared_mut::operator*(const shared_mut &shared) {
-/*	shared_mut t = *this;
-	t.ptr *= shared.ptr;
-	return t;
-*/}
+	int val1 = _mgr->ptr->get();
+        int val2 = shared.get()->get();
+        int val3 = val1*val2;
+        shared_mut n(new Object(val3));
+        return n;
+}
 
 shared_mut shared_mut::operator/(const shared_mut &shared) {
-/*	shared_mut t = *this;
-	t.ptr /= shared.ptr;
-	return t;
-*/}
+	int val1 = _mgr->ptr->get();
+        int val2 = shared.get()->get();
+        int val3 = val1/val2;
+        shared_mut n(new Object(val3));
+        return n;
+}
 
 Object* shared_mut::operator->() {
-//	return this->ptr;
+	return _mgr->ptr;
 }
 	
 shared_mut& shared_mut::operator=(const shared_mut &r) {
-//	shared_mut a = r;
-//	return a;
+	int val = r.get()->get();
+	shared_mut n(new Object(val));
+        return n;
 }
 	
 shared_mut::~shared_mut() {
