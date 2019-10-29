@@ -78,7 +78,12 @@ Object* shared_mut::operator->() {
 }
 	
 shared_mut& shared_mut::operator=(const shared_mut &r) {
-	_mgr = r._mgr;
+	if(this != &r) {
+		release();
+		_mgr = r._mgr;
+		increase();
+		return *this;
+	}
 	return *this;
 }
 	
