@@ -29,7 +29,6 @@ void shared_mut::release() {
 	_mgr->count--;
 	if(_mgr->count == 0) {
 		delete(_mgr);
-		_mgr = nullptr;
 	}
 	_mgr = new mgr();
 }
