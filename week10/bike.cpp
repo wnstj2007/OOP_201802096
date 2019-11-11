@@ -1,33 +1,21 @@
 #include "bike.h"
 
-bike::bike() {
-	
-}
+bike::bike() : vehicle() {}
 
-bike::bike(int a, int b) {
-	this->wheel_number = a;
-	this->max_speed = b;
-}
+bike::bike(int a, int b) : vehicle(a,b) {}
 
-bike::bike(int a, int b, char* c) {
-	this->wheel_number = a;
-	this->max_speed = b;
+bike::bike(int a, int b, char* c) : vehicle(a,b) {
 	this->bike_name = c;
 }
 
-bike::bike(int a, int b, char* c, int d) {
-        this->wheel_number = a;
-        this->max_speed = b;
+bike::bike(int a, int b, char* c, int d) : vehicle(a,b) {
         this->bike_name = c;
 	this->bike_number = d;
 }
 
-bike::bike(int a, int b, char* c, int d, bool has) {
-        this->wheel_number = a;
-        this->max_speed = b;
+bike::bike(int a, int b, char* c, int d, bool has) : vehicle(a,b,has) {
         this->bike_name = c;
 	this->bike_number = d;
-	this->has_name = has;
 }
 
 char* bike::get_bike_name() {

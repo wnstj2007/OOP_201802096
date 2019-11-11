@@ -1,25 +1,15 @@
 #include "car.h"
 
-car::car() {
-	
-}
+car::car() : vehicle() {}
 
-car::car(int a, int b) {
-	this->wheel_number = a;
-	this->max_speed = b;
-}
+car::car(int a, int b) : vehicle(a,b) {}
 
-car::car(int a, int b, char* c) {
-	this->wheel_number = a;
-	this->max_speed = b;
+car::car(int a, int b, char* c) : vehicle(a,b) {
 	this->car_name = c;
 }
 
-car::car(int a, int b, char* c, bool has) {
-        this->wheel_number = a;
-        this->max_speed = b;
+car::car(int a, int b, char* c, bool has) : vehicle(a,b,has) {
         this->car_name = c;
-	this->has_name = has;
 }
 
 char* car::get_car_name() {
