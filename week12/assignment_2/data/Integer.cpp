@@ -14,7 +14,7 @@ void Integer::set_val(const int& value) {
 }
 
 json_object* Integer::parse(const char* a, int length) {
-	std::string b = "";
+	std::string b;
 	int c=1;
 	for(int i = 0; *(a+i)<='9'&&*(a+i)>='0'; i++) {
 		b += *(a+i);

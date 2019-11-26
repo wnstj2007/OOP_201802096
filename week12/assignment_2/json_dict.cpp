@@ -119,15 +119,19 @@ json_object* json_dict::operator[](json_object* key) const {
                         return (*it).second;
                 }
         }
-
+	return nullptr;
 }
 
 json_object* json_dict::operator[](const std::string& key) const {
-	
+	for(auto it = v.begin(); it != v.end(); it++) {
+                if ((*it).first->to_string() == key) {
+                        return (*it).second;
+                }
+        }
+	return nullptr;
 }
 
 json_object* json_dict::operator[](int key) const {
-
 }
 
 json_object::_type json_dict::type() {

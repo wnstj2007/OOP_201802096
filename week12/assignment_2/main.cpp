@@ -40,7 +40,7 @@ int main() {
     {
         std::string str("{1:2, 1:3, 1:4}");
         json_object* obj = json_object::parse(str);
-	std::cout << "1:4" << std::endl;
+	std::cout << "";
         std::string tostr = obj->to_string();
         std::cout << tostr << std::endl;
     }
