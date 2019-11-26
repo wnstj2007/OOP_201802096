@@ -97,12 +97,12 @@ json_object* json_dict::parse(const char* a, int length) {
 		}
 		else if(tmp>='0' && tmp<='9') {
 			if(val) {
-				value = Integer::parse((a+_index), 0);
+				value = Integer::parse((a+i), 0);
 				i = _index;
 				continue;
 			}
 			else {
-				key = Integer::parse((a+_index), 0);
+				key = Integer::parse((a+i), 0);
 					i = _index;
 				continue;
 			}
