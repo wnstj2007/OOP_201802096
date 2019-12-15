@@ -47,21 +47,24 @@ void board::print_board()
             }
             else if(b[i][j] == 1)
             {
-                printf("%3d", b[i][j]);
+                printf("  ■");
             }
             else if(b[i][j] == 2)
             {
-                printf("\x1b[31m%3d", b[i][j]);
+                //printf("\x1b[31m%3d", b[i][j]);
+                printf("\x1b[31m  ■");
                 printf("\x1b[0m");
             }
             else if(b[i][j] == 3)
             {
-                printf("\x1b[32m%3d", b[i][j]);
+                //printf("\x1b[32m%3d", b[i][j]);
+                printf("\x1b[32m  ■");
                 printf("\x1b[0m");
             }
             else if(b[i][j] == 4)
             {
-                printf("\x1b[34m%3d", b[i][j]);
+                //printf("\x1b[34m%3d", b[i][j]);
+                printf("\x1b[34m  ■");
                 printf("\x1b[0m");
             }
         }
