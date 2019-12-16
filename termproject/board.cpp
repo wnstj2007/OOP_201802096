@@ -288,20 +288,6 @@ void board::explode()
         merge();
     }
 }
-bool board::fall()
-{
-    switch (cur)
-    {
-        case 0:
-            return f->can_down();
-        case 1:
-            return c->can_down();
-        case 2:
-            return t->can_down();
-        default:
-            break;
-    }
-}
 int board::get_score()
 {
     return score;
