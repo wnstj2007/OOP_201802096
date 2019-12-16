@@ -28,7 +28,6 @@ public:
     void defeat();
     void create();
     int move(char d);
-    bool fall();
     int get_score();
     void merge();
 };
